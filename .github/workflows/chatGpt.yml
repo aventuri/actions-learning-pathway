@@ -1,7 +1,7 @@
 on:
   pull_request:
     branches:
-      - test/sandbox
+      - test/sandbox2
   workflow_dispatch:
 
 jobs:
@@ -13,7 +13,7 @@ jobs:
         uses: aventuri/devops-chatgpt-comment-pull-request@main
         with:
           github-token: ${{ secrets.MY_GITHUB_TOKEN }}
-          open-api-key: ${{ secrets.CHATGPT_API_KEY }}
+          open-api-key: ${{ secrets.CHATGPT_BROKEN_KEY }}
           max-prompt-tokens: '10000'
           ignore-paths: '.github/*, src/, package*.json, .env*'
           model: 'gpt-3.5-turbo'
