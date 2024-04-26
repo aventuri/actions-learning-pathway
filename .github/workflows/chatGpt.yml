@@ -10,13 +10,14 @@ jobs:
     name: Add Comment
     steps:
       - name: Add Comment
-        uses: aventuri/devops-chatgpt-comment-pull-request@main
+        uses: aventuri/devops-chatgpt-comment-pull-request@azure
         with:
           github-token: ${{ secrets.MY_GITHUB_TOKEN }}
-          open-api-key: ${{ secrets.CHATGPT_BROKEN_KEY }}
+          open-api-key: ${{ secrets.AZURE_OPENAI_API_KEY }}
           max-prompt-tokens: '10000'
           ignore-paths: '.github/*, src/, package*.json, .env*'
-          model: 'gpt-3.5-turbo'
+          model: ${{ secrets.AZURE_OPENAI_MODEL }}
+          endpoint: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
           temperature: 1
           max-response-tokens: 512
           top_p: 1
