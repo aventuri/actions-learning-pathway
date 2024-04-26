@@ -10,7 +10,7 @@ jobs:
     name: Add Comment
     steps:
       - name: Add Comment
-        uses: aventuri/devops-chatgpt-comment-pull-request@azure
+        uses: aventuri/devops-chatgpt-comment-pull-request@azure2
         with:
           github-token: ${{ secrets.MY_GITHUB_TOKEN }}
           open-api-key: ${{ secrets.AZURE_OPENAI_API_KEY }}
